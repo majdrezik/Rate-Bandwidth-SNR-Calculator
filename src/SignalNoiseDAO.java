@@ -1,5 +1,4 @@
 
-
 import java.util.Scanner;
 
 public class SignalNoiseDAO {
@@ -25,7 +24,7 @@ public class SignalNoiseDAO {
 		params[0] = printRate;
 		params[1] = printBandwidth;
 		params[2] = printSNRatio;
-		
+
 		print("");
 		print(questions[3]);
 		for (int i = 0; i < numOfParams; i++) {
@@ -42,44 +41,44 @@ public class SignalNoiseDAO {
 		}
 
 		switch (answer) {
-		case 1:
-			print(questions[1]);
-			bandwidth = scan.nextInt();
-			print(questions[0]);
-			SNdb = scan.nextInt();
-			snP = transformSNR(SNdb);
-			print("SN in volt is: " + snP + "[Volt]");
-			print("your bandwidth is: " + bandwidth);
-			rate = calculateRate(bandwidth, snP);
-			printWithoutNewLine(dashes);
-			print("\n	your rate is: " + (int) rate + "[bps]");
-			printWithoutNewLine(dashes);
-			
-			break;
-		case 2:
-			print(questions[2]);
-			rate = scan.nextInt();
-			print(questions[0]);
-			SNdb = scan.nextInt();
-			snP = transformSNR(SNdb);
-			print("SN in volt is: " + snP);
-			bandwidth = calculateBandwidth(rate, snP);
-			printWithoutNewLine("---------------------------------------------");
-			print("\n	your bandwidth is: " + (int) bandwidth + "[Hz]");
-			printWithoutNewLine("---------------------------------------------");
-			break;
-		case 3:
-			print(questions[2]);
-			rate = scan.nextInt();
-			print(questions[1]);
-			bandwidth = scan.nextInt();
-			snP = calculateSNRatio(rate, bandwidth);
-			printWithoutNewLine("---------------------------------------------");
-			print("\n	your Signal to Noise ratio is: " + (int) snP + " [Volt]");
-			printWithoutNewLine("---------------------------------------------");
-			break;
-		default:
-			print("Invalid input!");
+			case 1:
+				print(questions[1]);
+				bandwidth = scan.nextInt();
+				print(questions[0]);
+				SNdb = scan.nextInt();
+				snP = transformSNR(SNdb);
+				print("SN in volt is: " + snP + "[Volt]");
+				print("your bandwidth is: " + bandwidth);
+				rate = calculateRate(bandwidth, snP);
+				printWithoutNewLine(dashes);
+				print("\n	your rate is: " + (int) rate + "[bps]");
+				printWithoutNewLine(dashes);
+	
+				break;
+			case 2:
+				print(questions[2]);
+				rate = scan.nextInt();
+				print(questions[0]);
+				SNdb = scan.nextInt();
+				snP = transformSNR(SNdb);
+				print("SN in volt is: " + snP);
+				bandwidth = calculateBandwidth(rate, snP);
+				printWithoutNewLine(dashes);
+				print("\n	your bandwidth is: " + (int) bandwidth + "[Hz]");
+				printWithoutNewLine(dashes);
+				break;
+			case 3:
+				print(questions[2]);
+				rate = scan.nextInt();
+				print(questions[1]);
+				bandwidth = scan.nextInt();
+				snP = calculateSNRatio(rate, bandwidth);
+				printWithoutNewLine(dashes);
+				print("\n	your Signal to Noise ratio is: " + (int) snP + " [Volt]");
+				printWithoutNewLine(dashes);
+				break;
+			default:
+				print("Invalid input!");
 		}
 
 		scan.close(); // close the scanner after use.
@@ -119,11 +118,10 @@ public class SignalNoiseDAO {
 		System.out.println(str + "\n");
 	}
 
-	
 	public void printWithoutNewLine(String str) {
 		System.out.println(str);
 	}
-	
+
 //----------------------------------------------------------------------------
 	public boolean illegalInput(int num) {
 		return (num >= 0 && num <= numOfParams) ? false : true;
