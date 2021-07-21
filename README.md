@@ -1,4 +1,4 @@
-# Rate-Bandwidth-SNR-Calculator
+### Information Theory - Rate, Bandwidth and Signal to Noise Ratio Calculator.
  A simple app that calculates: maximum rate, bandwidth and signal to noise ratio - given two variable. 
  
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
